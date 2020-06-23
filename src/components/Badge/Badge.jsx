@@ -24,7 +24,7 @@ export class Badge extends React.Component {
           </h1>
         </section>
         <section className="Badge__section-info">
-          <p>Frontend Developer</p>
+          <h3>Frontend Developer</h3>
           <p>@CalaoJuanPablo</p>
         </section>
         <footer className="Badge__footer">#platziconf</footer>
