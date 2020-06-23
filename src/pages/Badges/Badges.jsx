@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { BadgesList, PageLoading } from "../../components";
+import { BadgesList, PageLoading, PageError } from "../../components";
 import { Layout } from "../../templates";
 import api from "../../api";
 import "./Badges.css";
@@ -46,7 +46,7 @@ export class Badges extends React.Component {
     if (this.state.error) {
       return (
         <Layout>
-          <h1>Error: {this.state.error.message}</h1>
+          <PageError error={this.state.error} />
         </Layout>
       );
     }
