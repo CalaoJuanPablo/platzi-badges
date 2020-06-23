@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { BadgesList } from "../../components";
+import { BadgesList, PageLoading } from "../../components";
 import { Layout } from "../../templates";
 import api from "../../api";
 import "./Badges.css";
@@ -38,7 +38,7 @@ export class Badges extends React.Component {
     if (this.state.loading) {
       return (
         <Layout>
-          <h1>Loading...</h1>
+          <PageLoading />
         </Layout>
       );
     }
