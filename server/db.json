@@ -50,8 +50,16 @@
       "lastName": "Perez",
       "email": "jcalaop@gmail.com",
       "jobTitle": "Frontend Developer",
-      "twitterUsername": "CalaoJuanPablo",
+      "twitter": "CalaoJuanPablo",
       "id": "rcauyMa"
+    },
+    {
+      "firstName": "Juan Pablo",
+      "lastName": "Perez",
+      "email": "jcalaop@gmail.com",
+      "jobTitle": "Frontend Developer",
+      "twitter": "CalaoJuanPablo",
+      "id": "zyBrbrD"
     }
   ]
 }

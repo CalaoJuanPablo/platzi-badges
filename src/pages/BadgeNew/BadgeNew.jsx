@@ -1,5 +1,5 @@
 import React from "react";
-import { Badge, BadgeForm } from "../../components";
+import { Badge, BadgeForm, PageLoading } from "../../components";
 import { Layout } from "../../templates";
 import api from "../../api";
 import logo from "../../images/platziconf-logo.svg";
@@ -17,7 +17,7 @@ export class BadgeNew extends React.Component {
         lastName: "",
         email: "",
         jobTitle: "",
-        twitterUsername: "",
+        twitter: "",
       },
     };
   }
@@ -45,6 +45,13 @@ export class BadgeNew extends React.Component {
   }
 
   render() {
+    if (this.state.loading) {
+      return (
+        <Layout>
+          <PageLoading />
+        </Layout>
+      );
+    }
     return (
       <Layout>
         <div className="BadgeNew__hero">
@@ -59,7 +66,7 @@ export class BadgeNew extends React.Component {
                 firstName={this.state.form.firstName || "FIRST_NAME"}
                 lastName={this.state.form.lastName || "LAST_NAME"}
                 jobTitle={this.state.form.jobTitle || "JOB_TITLE"}
-                twitter={this.state.form.twitterUsername || "TWITTER_USER"}
+                twitter={this.state.form.twitter || "TWITTER_USER"}
                 email={this.state.form.email || "EMAIL@EXAMPLE.COM"}
               />
             </div>

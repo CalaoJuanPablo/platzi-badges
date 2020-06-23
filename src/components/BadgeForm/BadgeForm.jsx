@@ -52,13 +52,13 @@ export class BadgeForm extends React.Component {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="twitterUsername">Twitter Username</label>
+            <label htmlFor="twitter">Twitter Username</label>
             <input
-              id="twitterUsername"
+              id="twitter"
               className="form-control"
               type="text"
-              name="twitterUsername"
-              value={form.twitterUsername}
+              name="twitter"
+              value={form.twitter}
               onChange={onInputChange}
             />
           </div>
