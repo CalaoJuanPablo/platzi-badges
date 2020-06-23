@@ -1,12 +1,9 @@
-import React from 'react';
-import logo from './logo.svg';
-import {Badge} from './components'
-import './App.css';
+import React from "react";
+import { Badge } from "./components";
+import "./App.css";
 
 function App() {
-  return (
-    <Badge />
-  );
+  return <Badge />;
 }
 
 export default App;
