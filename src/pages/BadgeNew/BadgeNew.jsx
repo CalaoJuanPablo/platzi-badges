@@ -1,5 +1,6 @@
 import React from "react";
-import { Navbar, Badge, BadgeForm } from "../../components";
+import { Badge, BadgeForm } from "../../components";
+import { Layout } from "../../templates";
 import logo from "../../images/badge-header.svg";
 import "./BadgeNews.css";
 
@@ -37,8 +38,7 @@ export class BadgeNew extends React.Component {
 
   render() {
     return (
-      <div>
-        <Navbar />
+      <Layout>
         <div className="BadgeNew__hero">
           <img className="img-fluid" src={logo} alt="logo" />
         </div>
@@ -64,7 +64,7 @@ export class BadgeNew extends React.Component {
             </div>
           </div>
         </div>
-      </div>
+      </Layout>
     );
   }
 }
