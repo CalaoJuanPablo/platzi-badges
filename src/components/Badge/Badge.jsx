@@ -14,18 +14,20 @@ export class Badge extends React.Component {
         <section className="Badge__section-name">
           <img
             className="Badge__avatar"
-            src="https://gravatar.com/avatar?d=identicon"
+            src={
+              this.props.avatarUrl || "https://gravatar.com/avatar?d=identicon"
+            }
             alt="Avatar"
           />
           <h1>
-            Juan Pablo
+            {this.props.firstName}
             <br />
-            Calao
+            {this.props.lastName}
           </h1>
         </section>
         <section className="Badge__section-info">
-          <h3>Frontend Developer</h3>
-          <p>@CalaoJuanPablo</p>
+          <h3>{this.props.jobTitle}</h3>
+          <p>@{this.props.twitter}</p>
         </section>
         <footer className="Badge__footer">#platziconf</footer>
       </div>
