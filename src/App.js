@@ -1,6 +1,6 @@
 import React from "react";
-import { BadgeNew, Badges } from "./pages";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BadgeNew, Badges, NotFound } from "./pages";
 
 function App() {
   return (
@@ -8,6 +8,7 @@ function App() {
       <Switch>
         <Route exact path="/badges" component={Badges} />
         <Route exact path="/badges/new" component={BadgeNew} />
+        <Route component={NotFound} />
       </Switch>
     </BrowserRouter>
   );
