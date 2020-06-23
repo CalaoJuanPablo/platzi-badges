@@ -1,7 +1,7 @@
 import React from "react";
 import { Badge, BadgeForm } from "../../components";
 import { Layout } from "../../templates";
-import logo from "../../images/badge-header.svg";
+import logo from "../../images/platziconf-logo.svg";
 import "./BadgeNews.css";
 
 export class BadgeNew extends React.Component {
@@ -48,11 +48,11 @@ export class BadgeNew extends React.Component {
             <div className="col-6">
               <Badge
                 avatarUrl="https://avatars1.githubusercontent.com/u/31701636?s=460&u=08b897bbccbdfbbbac6e3acdf8fc701d912d367c&v=4"
-                firstName={this.state.form.firstName}
-                lastName={this.state.form.lastName}
-                jobTitle={this.state.form.jobTitle}
-                twitter={this.state.form.twitterUsername}
-                email={this.state.form.email}
+                firstName={this.state.form.firstName || "FIRST_NAME"}
+                lastName={this.state.form.lastName || "LAST_NAME"}
+                jobTitle={this.state.form.jobTitle || "JOB_TITLE"}
+                twitter={this.state.form.twitterUsername || "TWITTER_USER"}
+                email={this.state.form.email || "EMAIL@EXAMPLE.COM"}
               />
             </div>
             <div className="col-6">
