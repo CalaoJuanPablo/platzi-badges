@@ -3,6 +3,7 @@ import { BadgesList } from "../../components";
 import { Layout } from "../../templates";
 import confLogo from "../../images/badge-header.svg";
 import "./Badges.css";
+import { Link } from "react-router-dom";
 
 export class Badges extends React.Component {
   constructor(props) {
@@ -60,9 +61,9 @@ export class Badges extends React.Component {
 
         <div className="Badges__container">
           <div className="Badges__buttons">
-            <a href="/badges/new" className="btn btn-primary">
+            <Link to="/badges/new" className="btn btn-primary">
               New Badge
-            </a>
+            </Link>
           </div>
         </div>
 
