@@ -1,4 +1,5 @@
 import React from "react";
+import { Gravatar } from "../Gravatar";
 import logo from "../../images/badge-header.svg";
 import "./Badge.css";
 
@@ -12,13 +13,7 @@ export class Badge extends React.Component {
           </figure>
         </header>
         <section className="Badge__section-name">
-          <img
-            className="Badge__avatar"
-            src={
-              this.props.avatarUrl || "https://gravatar.com/avatar?d=identicon"
-            }
-            alt="Avatar"
-          />
+          <Gravatar className="Badge__avatar" email={this.props.email} />
           <h1>
             {this.props.firstName}
             <br />
