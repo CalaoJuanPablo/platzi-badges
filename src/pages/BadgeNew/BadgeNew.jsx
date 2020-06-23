@@ -1,6 +1,7 @@
 import React from "react";
 import { Badge, BadgeForm } from "../../components";
 import { Layout } from "../../templates";
+import api from "../../api";
 import logo from "../../images/platziconf-logo.svg";
 import "./BadgeNews.css";
 
@@ -24,6 +25,8 @@ export class BadgeNew extends React.Component {
   handleInputChange(event) {
     const { name, value } = event.target;
     this.setState({
+      loading: false,
+      error: null,
       form: {
         ...this.state.form,
         [name]: value,
@@ -31,9 +34,14 @@ export class BadgeNew extends React.Component {
     });
   }
 
-  handleFormSubmit(event) {
+  async handleFormSubmit(event) {
     event.preventDefault();
-    console.log(this.state);
+    this.setState({ loading: true });
+    try {
+      await api.badges.create(this.state.form);
+    } catch (error) {
+      this.setState({ loading: false, error });
+    }
   }
 
   render() {
