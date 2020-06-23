@@ -1,32 +1,33 @@
 import React from "react";
 import logo from "../../images/badge-header.svg";
+import "./Badge.css";
 
 export class Badge extends React.Component {
   render() {
     return (
-      <div>
-        <header>
+      <div className="Badge">
+        <header className="Badge__header">
           <figure>
             <img src={logo} alt="Logo de la Conf" />
           </figure>
         </header>
-        <section>
-          <figure>
-            <img src="https://gravatar.com/avatar?d=identicon" alt="Avatar" />
-          </figure>
-          <div>
-            <h1>
-              Juan Pablo
-              <br />
-              Calao
-            </h1>
-          </div>
-          <div>
-            <p>Frontend Developer</p>
-            <p>@CalaoJuanPablo</p>
-          </div>
+        <section className="Badge__section-name">
+          <img
+            className="Badge__avatar"
+            src="https://gravatar.com/avatar?d=identicon"
+            alt="Avatar"
+          />
+          <h1>
+            Juan Pablo
+            <br />
+            Calao
+          </h1>
         </section>
-        <footer>#platziconf</footer>
+        <section className="Badge__section-info">
+          <p>Frontend Developer</p>
+          <p>@CalaoJuanPablo</p>
+        </section>
+        <footer className="Badge__footer">#platziconf</footer>
       </div>
     );
   }
