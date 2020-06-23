@@ -36,7 +36,7 @@ export class BadgeNew extends React.Component {
 
   async handleFormSubmit(event) {
     event.preventDefault();
-    this.setState({ loading: true });
+    this.setState({ loading: true, error: null });
     try {
       await api.badges.create(this.state.form);
     } catch (error) {
