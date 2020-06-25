@@ -10,9 +10,10 @@ export class BadgeEdit extends React.Component {
     super(props);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
+    this.fetchData = this.fetchData.bind(this);
 
     this.state = {
-      loading: false,
+      loading: true,
       error: null,
       form: {
         firstName: "",
@@ -22,6 +23,24 @@ export class BadgeEdit extends React.Component {
         twitter: "",
       },
     };
+  }
+
+  componentDidMount() {
+    this.fetchData();
+  }
+
+  async fetchData() {
+    this.setState({ loading: true, error: null });
+
+    try {
+      const data = await api.badges.read(this.props.match.params.badgeId);
+      this.setState({
+        loading: false,
+        form: data,
+      });
+    } catch (error) {
+      this.setState({ loading: false, error });
+    }
   }
 
   handleInputChange(event) {
@@ -40,7 +59,7 @@ export class BadgeEdit extends React.Component {
     event.preventDefault();
     this.setState({ loading: true, error: null });
     try {
-      await api.badges.create(this.state.form);
+      await api.badges.update(this.props.match.params.badgeId, this.state.form);
       this.setState({ loading: false });
       this.props.history.push("/badges");
     } catch (error) {
@@ -76,6 +95,7 @@ export class BadgeEdit extends React.Component {
               />
             </div>
             <div className="col-6">
+              <h1>Edit Attendant</h1>
               <BadgeForm
                 form={this.state.form}
                 error={this.state.error}
