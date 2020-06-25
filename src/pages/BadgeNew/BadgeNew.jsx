@@ -12,6 +12,8 @@ export class BadgeNew extends React.Component {
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
 
     this.state = {
+      loading: false,
+      error: null,
       form: {
         firstName: "",
         lastName: "",
@@ -39,7 +41,10 @@ export class BadgeNew extends React.Component {
     this.setState({ loading: true, error: null });
     try {
       await api.badges.create(this.state.form);
+      this.setState({ loading: false });
+      this.props.history.push("/badges");
     } catch (error) {
+      console.error("Error");
       this.setState({ loading: false, error });
     }
   }
@@ -73,6 +78,7 @@ export class BadgeNew extends React.Component {
             <div className="col-6">
               <BadgeForm
                 form={this.state.form}
+                error={this.state.error}
                 onFormSubmit={this.handleFormSubmit}
                 onInputChange={this.handleInputChange}
               />

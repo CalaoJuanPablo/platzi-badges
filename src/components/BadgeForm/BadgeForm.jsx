@@ -2,7 +2,7 @@ import React from "react";
 
 export class BadgeForm extends React.Component {
   render() {
-    const { form, onInputChange, onFormSubmit } = this.props;
+    const { form, error, onInputChange, onFormSubmit } = this.props;
     return (
       <div>
         <h1>New Attendant</h1>
@@ -62,6 +62,7 @@ export class BadgeForm extends React.Component {
               onChange={onInputChange}
             />
           </div>
+          {error && <p className="text-danger">{error.message}</p>}
           <button className="btn btn-primary" type="submit">
             Save
           </button>
