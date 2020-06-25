@@ -3,9 +3,9 @@ import { Badge, BadgeForm, PageLoading } from "../../components";
 import { Layout } from "../../templates";
 import api from "../../api";
 import logo from "../../images/platziconf-logo.svg";
-import "./BadgeNew.css";
+import "./BadgeEdit.css";
 
-export class BadgeNew extends React.Component {
+export class BadgeEdit extends React.Component {
   constructor(props) {
     super(props);
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -59,7 +59,7 @@ export class BadgeNew extends React.Component {
     }
     return (
       <Layout>
-        <div className="BadgeNew__hero">
+        <div className="BadgeEdit__hero">
           <img className="img-fluid" src={logo} alt="logo" />
         </div>
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { Home, BadgeNew, Badges, NotFound } from "./pages";
+import { Home, BadgeNew, BadgeEdit, Badges, NotFound } from "./pages";
 
 function App() {
   return (
@@ -9,6 +9,7 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route exact path="/badges" component={Badges} />
         <Route exact path="/badges/new" component={BadgeNew} />
+        <Route exact path="/badges/edit/:badgeId" component={BadgeEdit} />
         <Route component={NotFound} />
       </Switch>
     </BrowserRouter>
